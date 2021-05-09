@@ -1,0 +1,26 @@
+
+<!-- <view class='photo'>
+  <view class='text' >
+    <text>身份证正面</text>
+    <view wx:if="{{flag1}}" class="yulan" bindtap="yulan1">预览</view>
+  </view>
+  <image class='ph' src='{{photos1}}' bindtap='touchphoto1' mode='aspectFit'></image>
+</view>
+<view class='photo'>
+  <view class='text' >
+    <text>身份证反面</text>
+    <view wx:if="{{flag2}}" class="yulan" bindtap="yulan2">预览</view>
+  </view>
+  <image class='ph' src='{{photos2}}' bindtap='touchphoto2' mode='aspectFit'></image>
+</view> -->
+ <view class='photo'>
+   <view class='text' >
+    <text>营业执照副本</text>
+    <view wx:if="{{flag3}}" class="yulan" bindtap="yulan3">预览</view>
+  </view>
+  <image class='ph' src='{{photos3}}' bindtap='touchphoto3' mode='aspectFit'></image>
+</view>
+ 
+  <view class="weui-btn">
+     <button  type="primary" bindtap="submitForm">提交</button>
+  </view>

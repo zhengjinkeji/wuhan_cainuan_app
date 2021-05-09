@@ -1,0 +1,27 @@
+#box{
+  /*height: 800px;*/
+  margin: 20rpx ;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  /*background-color: red;*/
+}
+.box1{
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.btn1 { 
+  width: 30%; 
+  margin-top: 20rpx; 
+  margin-left:10rpx;
+  margin-bottom: 20rpx;
+  float:left;
+ }
+ .btn2 { 
+  width: 30%; 
+  margin-top: 20rpx; 
+  margin-right:10rpx;
+  margin-bottom: 20rpx;
+  float:right;
+ }

@@ -1,0 +1,26 @@
+.photo {
+  display: flex;
+  padding: 10px 0 10px 0;
+  border-bottom: 1rpx solid #eee;
+}
+.ph{
+  border:  1rpx solid #eee;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+.text{
+  padding: 10px;
+  text-align: center;
+  width:100px;
+  margin-right: 30px;
+
+}
+.yulan{
+  padding: 30px 0 0 0;
+  color: blue;
+}
+.weui-btn{
+  padding: 20px 0 0 0;
+}

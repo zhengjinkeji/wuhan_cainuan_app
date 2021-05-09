@@ -1,0 +1,51 @@
+<view class="container2">
+  <view  class="status-box">
+    <view bindtap="statusTap" class="status-label {{item.status == status ? 'active' : ''}}" wx:for="{{statusType}}" wx:key="index" data-status="{{item.status}}">
+      {{item.label}}
+    </view>
+  </view>
+  <view class="no-order" hidden="{{flag}}">
+    <image src="/images/no-order.png" class="no-order-img"></image>
+    <view class="text">暂无数据</view> 
+  </view>
+  <view class="goods-container" hidden="{{!flag}}">
+        <view class="goods" wx:for="{{currentTaskList}}" wx:key="id"  data-id='{{item.id}}' >
+       <!-- <image class='fresh-tag' src="/images/tuijian.png" wx:if="{{item.is_top}}"></image> --> 
+       <view class='fresh-tag2'  wx:if="{{item.status!=5}}" >
+          <text wx:if="{{item.status==1 && item.business_license_url==''}}" class=''>已直接通过</text>
+          <text bindtap="checkPic" data-pic="{{item.business_license_url}}" wx:else class=''>查看图片</text>
+        </view> 
+        <!-- <image mode="aspectFill" class="pic" src="{{item.user_avatar_url}}" ></image> -->
+        <view class="name ellipsis"  >{{item.name}}</view>
+        <view class='soldInfo'>
+          <view class='good-price-box'>
+            <text class="task-name">用户名：{{item.account}}</text>
+          </view>
+        </view>
+        <view class='soldInfo'>
+          <view class='good-sales-box'>
+            <text class="task-name"  wx:if="{{item.status==4}}">提交时间：{{item.submit_date}}</text>
+            <text class="task-name" wx:if="{{item.status==1}}">审核时间：{{item.audit_date}}</text>
+            <text class="task-name" wx:if="{{item.status==5}}">注册时间：{{item.createtime}}</text>
+              <!-- <text class="status" bindtap="shenhe">审核</text> -->
+          </view>
+        </view>
+        <view class='soldInfo2' wx:if="{{item.status==5&&item.not_pass_reason!=''}}">
+          <view class='good-price-box'>
+            <text class="task-name">{{item.not_pass_reason}}</text>
+          </view>
+        </view>
+        <view class='soldInfo' wx:if="{{item.status==4 || item.status==5}}">
+         <view class='good-sales-box' >
+            <button   class="choose {{item.status==5?'shenhe2':'shenhe1'}}" type="default" data-id="{{item.id}}" size="mini" bindtap="shenhe1">通过</button>
+            <button wx:if="{{item.status!=5}}" class="shenhe2" type="default" data-id="{{item.id}}" size="mini" bindtap="shenhe2">驳回</button> 
+          </view>
+        </view>
+        <!-- <image data-id="{{item.id}}" bindtap="addShopCar" class="car" src="/images/icon/car.svg"></image> -->
+      </view>
+  </view>
+
+</view>
+<modal hidden="{{hiddenmodalput}}" title="驳回理由" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input type='text' placeholder="请输入内容" bindinput='setValue' auto-focus/>  
+</modal> 
